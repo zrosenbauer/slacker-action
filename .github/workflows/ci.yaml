@@ -26,4 +26,4 @@ jobs:
           webhook_url: https://hooks.slack.com/services/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
           text: Example Slack Message
           username: "example-bot"
-          icon_emoji: ":ghost:"
+          icon_emoji: ":white_check_mark:"
