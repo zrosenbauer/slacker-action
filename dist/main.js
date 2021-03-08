@@ -37,6 +37,7 @@ const availableInputs = ['username', 'text', 'icon_emoji', 'icon_url'];
                 config[availableInput] = value;
             }
         });
+        core.info(JSON.stringify(config));
         await slack.sendMessage(webhookUrl, config);
     }
     catch (err) {
