@@ -1,5 +1,3 @@
-import * as core from '@actions/core';
-
 import {IncomingWebhook} from '@slack/webhook';
 
 export interface Input {
@@ -13,14 +11,6 @@ export interface Input {
 
 export async function sendMessage (webhookUrl: string, input: Input): Promise<void> {
   const webhook = new IncomingWebhook(webhookUrl);
-
-  core.info('PAYLOAD');
-  core.info(JSON.stringify({
-    text: input.text,
-    username: input.username,
-    icon_emoji: input.icon_emoji,
-    icon_url: input.icon_url
-  }));
 
   await webhook.send({
     text: input.text,
