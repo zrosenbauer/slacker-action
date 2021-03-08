@@ -1,14 +1,7 @@
 export interface Input {
     text: string;
-    channel: string;
     username: string;
+    icon_emoji: string;
+    icon_url: string;
 }
-export interface Config {
-    text: string;
-    channel?: string;
-    username?: string;
-    iconEmoji?: string;
-    iconUrl?: string;
-}
-export declare function buildConfig(input: Input): Config;
-export declare function sendMessage(webhookUrl: string, config: Config): Promise<void>;
+export declare function sendMessage(webhookUrl: string, config: Input): Promise<void>;

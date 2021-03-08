@@ -9,27 +9,13 @@ export interface Input {
   icon_url: string;
 }
 
-export interface Config {
-  text: string;
-  username?: string;
-  iconEmoji?: string;
-  iconUrl?: string;
-}
-
-export function buildConfig (input: Input): Config {
-  return {
-    text: input.text,
-    username: input.username
-  };
-}
-
-export async function sendMessage (webhookUrl: string, config: Config): Promise<void> {
+export async function sendMessage (webhookUrl: string, config: Input): Promise<void> {
   const webhook = new IncomingWebhook(webhookUrl);
 
   await webhook.send({
     text: config.text,
     username: config.username,
-    icon_emoji: config.iconEmoji,
-    icon_url: config.iconUrl
+    icon_emoji: config.icon_emoji,
+    icon_url: config.icon_url
   });
 }

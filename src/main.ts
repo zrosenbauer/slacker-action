@@ -18,10 +18,10 @@ const availableInputs = [
       throw new Error('"webhook_url" input must be set');
     }
 
-    const config = {} as slack.Config;
+    const config = {} as slack.Input;
 
     availableInputs.forEach((availableInput) => {
-      config[availableInput as keyof slack.Config] = core.getInput(availableInput);
+      config[availableInput as keyof slack.Input] = core.getInput(availableInput);
     });
 
     await slack.sendMessage(webhookUrl, config);
