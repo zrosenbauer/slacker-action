@@ -2,13 +2,15 @@ import {IncomingWebhook} from '@slack/webhook';
 
 export interface Input {
   text: string;
-  channel: string;
   username: string;
+  // eslint-disable-next-line camelcase
+  icon_emoji: string;
+  // eslint-disable-next-line camelcase
+  icon_url: string;
 }
 
 export interface Config {
   text: string;
-  channel?: string;
   username?: string;
   iconEmoji?: string;
   iconUrl?: string;
@@ -26,7 +28,8 @@ export async function sendMessage (webhookUrl: string, config: Config): Promise<
 
   await webhook.send({
     text: config.text,
-    username: config?.username,
-    icon_emoji: config?.iconEmoji
+    username: config.username,
+    icon_emoji: config.iconEmoji,
+    icon_url: config.iconUrl
   });
 }
