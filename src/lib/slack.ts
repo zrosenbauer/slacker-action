@@ -1,9 +1,8 @@
-import {IncomingWebhook} from '@slack/webhook';
+import { IncomingWebhook } from '@slack/webhook';
 
 export interface Input {
   text: string;
-  // eslint-disable-next-line camelcase
-  webhook_url?: string;
+  channel: string;
 }
 
 export interface Config {
@@ -16,7 +15,8 @@ export interface Config {
 
 export function buildConfig (input: Input): Config {
   return {
-    text: input.text
+    text: input.text,
+    channel: input.channel
   };
 }
 
