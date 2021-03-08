@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.sendMessage = exports.buildConfig = void 0;
 const webhook_1 = __nccwpck_require__(1095);
 function buildConfig(input) {
-    const webhookUrl = process.env.WEBHOOK_URL ?? input.webhook_url;
+    const webhookUrl = process.env.WEBHOOK_URL ? process.env.WEBHOOK_URL : input.webhook_url;
     if (!webhookUrl) {
         throw new Error('"webhook_url" input must be set');
     }
