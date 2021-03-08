@@ -1,8 +1,19 @@
-name: blueprint-action-typescript
+name: action-slack
 description: Template repository for TypeScript Github Actions.
 author: @bluenovaio
-inputs: {}
-outputs: {}
+inputs:
+  username:
+    description: fo
+    required: true
+  channel:
+    description: Override the channel associated to the webhook URL.
+    required: false
+  text:
+    description: fo
+    required: true
+  webhook_url:
+    description: foo
+    required: false
 runs:
   using: node12
   main: dist/index.js

@@ -18,18 +18,15 @@ jobs:
       - name: Use Node.js v14
         uses: actions/setup-node@v1
         with:
-          node-version: 12
-      - name: Install Packages
-        run: yarn install
-      - name: Format Check
-        run: yarn format-check
-      - name: Lint
-        run: yarn lint
-      - name: Test
-        run: yarn test
-
-        ## You can add the action in if you need / want to test it
-
-#      - id: runAction
-#        name: Run Action Code
-#        uses: ./
+          node-version: 14
+#      - name: Install Packages
+#        run: yarn install
+#      - name: Format Check
+#        run: yarn format-check
+#      - name: Lint
+#        run: yarn lint
+#      - name: Test
+#        run: yarn test
+      - id: runAction
+        name: Run Action Code
+        uses: ./
