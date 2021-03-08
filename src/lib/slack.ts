@@ -1,4 +1,4 @@
-import { IncomingWebhook } from '@slack/webhook';
+import {IncomingWebhook} from '@slack/webhook';
 
 export interface Input {
   text: string;
@@ -16,7 +16,7 @@ export interface Config {
 }
 
 export function buildConfig (input: Input): Config {
-  const webhookUrl = process.env.WEBHOOK_URL ?? input.webhook_url;
+  const webhookUrl = process.env.WEBHOOK_URL ? process.env.WEBHOOK_URL : input.webhook_url;
   if (!webhookUrl) {
     throw new Error('"webhook_url" input must be set');
   }
