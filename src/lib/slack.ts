@@ -1,4 +1,4 @@
-import { IncomingWebhook } from '@slack/webhook';
+import {IncomingWebhook} from '@slack/webhook';
 
 export interface Input {
   text: string;
@@ -26,6 +26,7 @@ export async function sendMessage (webhookUrl: string, config: Config): Promise<
 
   await webhook.send({
     text: config.text,
-    username: config.username
+    username: config?.username,
+    icon_emoji: config?.iconEmoji
   });
 }

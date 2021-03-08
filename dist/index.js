@@ -12,14 +12,17 @@ exports.sendMessage = exports.buildConfig = void 0;
 const webhook_1 = __nccwpck_require__(1095);
 function buildConfig(input) {
     return {
-        text: input.text
+        text: input.text,
+        username: input.username
     };
 }
 exports.buildConfig = buildConfig;
 async function sendMessage(webhookUrl, config) {
     const webhook = new webhook_1.IncomingWebhook(webhookUrl);
     await webhook.send({
-        text: config.text
+        text: config.text,
+        username: config?.username,
+        icon_emoji: config?.iconEmoji
     });
 }
 exports.sendMessage = sendMessage;

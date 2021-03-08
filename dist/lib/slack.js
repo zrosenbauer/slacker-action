@@ -13,7 +13,8 @@ async function sendMessage(webhookUrl, config) {
     const webhook = new webhook_1.IncomingWebhook(webhookUrl);
     await webhook.send({
         text: config.text,
-        username: config.username
+        username: config?.username,
+        icon_emoji: config?.iconEmoji
     });
 }
 exports.sendMessage = sendMessage;

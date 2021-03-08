@@ -6,7 +6,8 @@ const availableInputs = [
   'username',
   'channel',
   'text',
-  'webhook_url'
+  'icon_emoji',
+  'icon_url'
 ];
 
 (async function () {
