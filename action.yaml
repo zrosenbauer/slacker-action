@@ -1,6 +1,6 @@
 name: action-slack
 description: Template repository for TypeScript Github Actions.
-author: @bluenovaio
+author: "@bluenovaio"
 inputs:
   username:
     description: fo
