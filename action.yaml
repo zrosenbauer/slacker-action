@@ -5,12 +5,12 @@ inputs:
   username:
     description: fo
     required: false
-  channel:
-    description: fo
-    required: true
   text:
     description: fo
     required: true
+  webhook_url:
+    description: foo
+    required: false
   icon_emoji:
     description: foo
     required: false
