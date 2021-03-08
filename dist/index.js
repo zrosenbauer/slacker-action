@@ -10,13 +10,20 @@ require('./sourcemap-register.js');module.exports =
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.sendMessage = void 0;
 const webhook_1 = __nccwpck_require__(1095);
-async function sendMessage(webhookUrl, config) {
+async function sendMessage(webhookUrl, input) {
     const webhook = new webhook_1.IncomingWebhook(webhookUrl);
+    console.log('PAYLOAD');
+    console.log({
+        text: input.text,
+        username: input.username,
+        icon_emoji: input.icon_emoji,
+        icon_url: input.icon_url
+    });
     await webhook.send({
-        text: config.text,
-        username: config.username,
-        icon_emoji: config.icon_emoji,
-        icon_url: config.icon_url
+        text: input.text,
+        username: input.username,
+        icon_emoji: input.icon_emoji,
+        icon_url: input.icon_url
     });
 }
 exports.sendMessage = sendMessage;
@@ -53,7 +60,6 @@ const core = __importStar(__nccwpck_require__(2186));
 const slack = __importStar(__nccwpck_require__(4179));
 const availableInputs = [
     'username',
-    'channel',
     'text',
     'icon_emoji',
     'icon_url'
