@@ -25,4 +25,4 @@ jobs:
         with:
           webhook_url: https://hooks.slack.com/services/RYJRCFA7/B01R5FJNM32/moz9GBmOuOmOq6tPxKnN1trH
           text: Example Slack Message
-          channel:
+          channel: oss-github-action
