@@ -19,14 +19,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
-#      - name: Install Packages
-#        run: yarn install
-#      - name: Format Check
-#        run: yarn format-check
-#      - name: Lint
-#        run: yarn lint
-#      - name: Test
-#        run: yarn test
+      #      - name: Install Packages
+      #        run: yarn install
+      #      - name: Format Check
+      #        run: yarn format-check
+      #      - name: Lint
+      #        run: yarn lint
+      #      - name: Test
+      #        run: yarn test
       - id: runAction
         name: Run Action Code
         uses: ./
+        with:
+          webhook_url: https://hooks.slack.com/services/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
+          text: Example Slack Message
