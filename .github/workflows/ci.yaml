@@ -31,7 +31,7 @@ jobs:
         name: Run Action Code
         uses: ./
         with:
-          webhook_url: https://hooks.slack.com/services/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
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           text: This is a new commit - ${{ github.sha }}
           username: "BlueNova Bot"
           icon_url: "https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG"
