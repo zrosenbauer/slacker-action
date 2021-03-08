@@ -24,6 +24,7 @@ export async function sendMessage (webhookUrl: string, config: Config): Promise<
   const webhook = new IncomingWebhook(webhookUrl);
 
   await webhook.send({
-    text: config.text
+    text: config.text,
+    channel: config.channel
   });
 }
