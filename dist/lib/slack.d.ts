@@ -4,4 +4,4 @@ export interface Input {
     icon_emoji: string;
     icon_url: string;
 }
-export declare function sendMessage(webhookUrl: string, config: Input): Promise<void>;
+export declare function sendMessage(webhookUrl: string, input: Input): Promise<void>;

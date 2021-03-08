@@ -23,7 +23,6 @@ const core = __importStar(require("@actions/core"));
 const slack = __importStar(require("./lib/slack"));
 const availableInputs = [
     'username',
-    'channel',
     'text',
     'icon_emoji',
     'icon_url'

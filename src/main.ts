@@ -4,7 +4,6 @@ import * as slack from './lib/slack';
 
 const availableInputs = [
   'username',
-  'channel',
   'text',
   'icon_emoji',
   'icon_url'

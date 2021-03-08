@@ -9,13 +9,21 @@ export interface Input {
   icon_url: string;
 }
 
-export async function sendMessage (webhookUrl: string, config: Input): Promise<void> {
+export async function sendMessage (webhookUrl: string, input: Input): Promise<void> {
   const webhook = new IncomingWebhook(webhookUrl);
 
+  console.log('PAYLOAD');
+  console.log({
+    text: input.text,
+    username: input.username,
+    icon_emoji: input.icon_emoji,
+    icon_url: input.icon_url
+  });
+
   await webhook.send({
-    text: config.text,
-    username: config.username,
-    icon_emoji: config.icon_emoji,
-    icon_url: config.icon_url
+    text: input.text,
+    username: input.username,
+    icon_emoji: input.icon_emoji,
+    icon_url: input.icon_url
   });
 }
