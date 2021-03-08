@@ -4,7 +4,7 @@ author: @bluenovaio
 inputs:
   username:
     description: fo
-    required: true
+    required: false
   channel:
     description: Override the channel associated to the webhook URL.
     required: false
