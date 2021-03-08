@@ -26,5 +26,5 @@ jobs:
           webhook_url: https://hooks.slack.com/services/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
           text: Example Slack Message
           username: "BlueNova Bot"
-          icon_emoji: ":smile:"
-#          icon_url: https://bluenova.io/favicon.ico
+          icon_url: "https://cdn0.iconfinder.com/data/icons/customicondesignoffice5/256/examples.png"
+#          icon_emoji: ":smile:"
