@@ -18,7 +18,7 @@ jobs:
       - name: Use Node.js v14
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - name: Install Packages
         run: yarn install
       - name: Format Check
@@ -27,9 +27,11 @@ jobs:
         run: yarn lint
       - name: Test
         run: yarn test
-
-        ## You can add the action in if you need / want to test it
-
-#      - id: runAction
-#        name: Run Action Code
-#        uses: ./
+      - id: runAction
+        name: Run Action Code
+        uses: ./
+        with:
+          webhook_url: https://hooks.slack.com/services/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
+          text: This is a new commit - ${{ github.sha }}
+          username: "BlueNova Bot"
+          icon_url: "https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG"
