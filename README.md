@@ -7,7 +7,7 @@ Action used to send messages to slack via a webhook.
 
 ## Usage
 
-The API for this action mirrors the webhook API verbatim. Some items are not currently supported (i.e. attachments).
+The API for this action mirrors the [Slack Webhook API](https://api.slack.com/methods/chat.postMessage) verbatim. Some items are not currently supported (i.e. attachments).
 
 ```yaml
 name: Example Action 
