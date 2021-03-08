@@ -1,5 +1,5 @@
-name: action-slack
-description: ""
+name: Slack Webhook
+description: Action used to send messages to slack via a webhook.
 author: "@bluenovaio"
 inputs:
   username:
