@@ -7,8 +7,7 @@ Action used to send messages to slack via a webhook.
 
 ## Usage
 
-The API for this action mirrors the webhook API verbatim. Some items are
-not currently suppported (i.e. attachements).
+The API for this action mirrors the webhook API verbatim. Some items are not currently supported (i.e. attachments).
 
 ```yaml
 name: Example Action 
@@ -20,7 +19,7 @@ jobs:
     name: Send a Message 
     runs-on: ubuntu-latest
     steps:
-      - use: @bluenova/action-slack@main 
+      - use: bluenovaio/action-slack@main 
         with:
           username: "ExampleBot"
           icon_emoji: ":robot_face:"
