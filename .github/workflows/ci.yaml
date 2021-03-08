@@ -27,3 +27,4 @@ jobs:
           text: Example Slack Message
           username: "example-bot"
           icon_emoji: ":white_check_mark:"
+          icon_url: https://bluenova.io/favicon.ico
