@@ -3,6 +3,7 @@ import { IncomingWebhook } from '@slack/webhook';
 export interface Input {
   text: string;
   channel: string;
+  username: string;
 }
 
 export interface Config {
@@ -16,7 +17,7 @@ export interface Config {
 export function buildConfig (input: Input): Config {
   return {
     text: input.text,
-    channel: input.channel
+    username: input.username
   };
 }
 
@@ -25,6 +26,6 @@ export async function sendMessage (webhookUrl: string, config: Config): Promise<
 
   await webhook.send({
     text: config.text,
-    channel: config.channel
+    username: config.username
   });
 }

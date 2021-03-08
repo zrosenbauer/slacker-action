@@ -5,9 +5,6 @@ inputs:
   username:
     description: fo
     required: false
-  channel:
-    description: Override the channel associated to the webhook URL.
-    required: false
   text:
     description: fo
     required: true
