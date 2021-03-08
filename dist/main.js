@@ -29,7 +29,10 @@ const availableInputs = [
 ];
 (async function () {
     try {
-        const webhookUrl = core.getInput('webhook_url');
+        const webhookUrl = process.env.WEBHOOK_URL ? process.env.WEBHOOK_URL : core.getInput('webhook_url');
+        if (!webhookUrl) {
+            throw new Error('"webhook_url" input must be set');
+        }
         const config = {};
         availableInputs.forEach((availableInput) => {
             config[availableInput] = core.getInput(availableInput);

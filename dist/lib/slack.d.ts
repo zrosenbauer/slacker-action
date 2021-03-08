@@ -3,7 +3,6 @@ export interface Input {
     webhook_url?: string;
 }
 export interface Config {
-    webhookUrl: string;
     text: string;
     channel?: string;
     username?: string;
