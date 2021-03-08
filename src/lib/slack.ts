@@ -1,4 +1,4 @@
-import {IncomingWebhook} from '@slack/webhook';
+import { IncomingWebhook } from '@slack/webhook';
 
 export interface Input {
   text: string;

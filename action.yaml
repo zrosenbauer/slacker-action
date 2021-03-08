@@ -1,21 +1,21 @@
 name: action-slack
-description: Template repository for TypeScript Github Actions.
+description: ""
 author: "@bluenovaio"
 inputs:
   username:
-    description: fo
+    description: Use to specify the username for the published message.
     required: false
   text:
-    description: fo
+    description: Use to define the message that will be sent to slack.
     required: true
   webhook_url:
-    description: foo
+    description: Use to define the webhook URL used to send a message.
     required: false
   icon_emoji:
-    description: foo
+    description: Use to specify an emoji (using colon shortcodes, eg. :white_check_mark:) to use as the profile photo alongside the message.
     required: false
   icon_url:
-    description: foo
+    description: Use to specify a URL to an image to use as the profile photo alongside the message.
     required: false
 runs:
   using: node12
