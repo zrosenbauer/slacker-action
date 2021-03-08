@@ -1,6 +1,7 @@
 export interface Input {
     text: string;
-    webhook_url?: string;
+    channel: string;
+    username: string;
 }
 export interface Config {
     text: string;
