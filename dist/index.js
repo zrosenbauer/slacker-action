@@ -12,12 +12,7 @@ exports.sendMessage = void 0;
 const webhook_1 = __nccwpck_require__(1095);
 async function sendMessage(webhookUrl, input) {
     const webhook = new webhook_1.IncomingWebhook(webhookUrl);
-    await webhook.send({
-        text: input.text,
-        username: input.username,
-        icon_emoji: input.icon_emoji,
-        icon_url: input.icon_url
-    });
+    await webhook.send(input);
 }
 exports.sendMessage = sendMessage;
 //# sourceMappingURL=slack.js.map
@@ -51,23 +46,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
 const slack = __importStar(__nccwpck_require__(4179));
-const availableInputs = [
-    'username',
-    'text',
-    'icon_emoji',
-    'icon_url'
-];
+const availableInputs = ['username', 'text', 'icon_emoji', 'icon_url'];
 (async function () {
     try {
-        const webhookUrl = process.env.WEBHOOK_URL ? process.env.WEBHOOK_URL : core.getInput('webhook_url');
+        const webhookUrl = process.env.WEBHOOK_URL
+            ? process.env.WEBHOOK_URL
+            : core.getInput('webhook_url');
         if (!webhookUrl) {
             throw new Error('"webhook_url" input must be set');
         }
         const config = {};
-        availableInputs.forEach((availableInput) => {
-            config[availableInput] = core.getInput(availableInput);
+        availableInputs.forEach(availableInput => {
+            const value = core.getInput(availableInput);
+            if (value) {
+                config[availableInput] = value;
+            }
         });
-        core.info(JSON.stringify(config));
         await slack.sendMessage(webhookUrl, config);
     }
     catch (err) {

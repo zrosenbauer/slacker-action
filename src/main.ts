@@ -17,12 +17,13 @@ const availableInputs = ['username', 'text', 'icon_emoji', 'icon_url'];
     const config = {} as slack.Input;
 
     availableInputs.forEach(availableInput => {
-      config[availableInput as keyof slack.Input] = core.getInput(
-        availableInput
-      );
+      const value = core.getInput(availableInput);
+
+      if (value) {
+        config[availableInput as keyof slack.Input] = value;
+      }
     });
 
-    core.info(JSON.stringify(config));
     await slack.sendMessage(webhookUrl, config);
   } catch (err) {
     core.setFailed(err.message);
