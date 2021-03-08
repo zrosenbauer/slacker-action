@@ -26,5 +26,4 @@ jobs:
           webhook_url: https://hooks.slack.com/services/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
           text: This is a new commit - ${{ github.sha }}
           username: "BlueNova Bot"
-          icon_emoji: ":smile:"
-#          icon_url: "https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG"
+          icon_url: "https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG"
