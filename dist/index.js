@@ -15,7 +15,7 @@ async function sendMessage(webhookUrl, input) {
     await webhook.send({
         text: input.text,
         username: input.username,
-        // icon_emoji: input.icon_emoji,
+        icon_emoji: input.icon_emoji,
         icon_url: input.icon_url
     });
 }
@@ -67,6 +67,7 @@ const availableInputs = [
         availableInputs.forEach((availableInput) => {
             config[availableInput] = core.getInput(availableInput);
         });
+        core.info(JSON.stringify(config));
         await slack.sendMessage(webhookUrl, config);
     }
     catch (err) {

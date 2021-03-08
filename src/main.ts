@@ -23,6 +23,7 @@ const availableInputs = [
       config[availableInput as keyof slack.Input] = core.getInput(availableInput);
     });
 
+    core.info(JSON.stringify(config));
     await slack.sendMessage(webhookUrl, config);
   } catch (err) {
     core.setFailed(err.message);
