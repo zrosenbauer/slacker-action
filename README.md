@@ -1,6 +1,6 @@
 # action-slack
 
-[![CI](https://github.com/bluenovaio/blueprint-action-typescript/actions/workflows/ci.yaml/badge.svg)](https://github.com/bluenovaio/blueprint-action-typescript/actions/workflows/ci.yaml)
+[![CI](https://github.com/bluenovaio/action-slack/actions/workflows/ci.yaml/badge.svg)](https://github.com/bluenovaio/action-slack/actions/workflows/ci.yaml)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
 
 Action used to send messages to slack via a webhook. 
