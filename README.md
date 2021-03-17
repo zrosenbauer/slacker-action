@@ -19,14 +19,10 @@ jobs:
     name: Send a Message 
     runs-on: ubuntu-latest
     steps:
-      - use: bluenovaio/action-slack@main 
+      - uses: bluenovaio/action-slack@main 
         with:
           username: "ExampleBot"
           icon_emoji: ":robot_face:"
           text: "This is a sample message"
           webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }} 
 ```
-
-#### Attribution
-
-The OSS policies in this repository are based on [this](https://github.com/auth0/open-source-template) repo by Auth0.
