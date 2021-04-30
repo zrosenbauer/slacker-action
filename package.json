@@ -16,7 +16,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.2.7",
     "@slack/webhook": "^6.0.0"
   },
   "devDependencies": {
