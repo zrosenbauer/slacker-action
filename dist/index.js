@@ -1,5 +1,4 @@
-require('./sourcemap-register.js');module.exports =
-/******/ (() => { // webpackBootstrap
+require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 4179:
@@ -268,6 +267,7 @@ exports.getInput = getInput;
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function setOutput(name, value) {
+    process.stdout.write(os.EOL);
     command_1.issueCommand('set-output', { name }, value);
 }
 exports.setOutput = setOutput;
@@ -3594,8 +3594,9 @@ var assert = __nccwpck_require__(2357);
 var debug = __nccwpck_require__(1133);
 
 // Create handlers that pass events from native requests
+var events = ["abort", "aborted", "connect", "error", "socket", "timeout"];
 var eventHandlers = Object.create(null);
-["abort", "aborted", "connect", "error", "socket", "timeout"].forEach(function (event) {
+events.forEach(function (event) {
   eventHandlers[event] = function (arg1, arg2, arg3) {
     this._redirectable.emit(event, arg1, arg2, arg3);
   };
@@ -3650,9 +3651,7 @@ RedirectableRequest.prototype = Object.create(Writable.prototype);
 
 RedirectableRequest.prototype.abort = function () {
   // Abort the internal request
-  this._currentRequest.removeAllListeners();
-  this._currentRequest.on("error", noop);
-  this._currentRequest.abort();
+  abortRequest(this._currentRequest);
 
   // Abort this request
   this.emit("abort");
@@ -3743,8 +3742,14 @@ RedirectableRequest.prototype.setTimeout = function (msecs, callback) {
     this.on("timeout", callback);
   }
 
+  function destroyOnTimeout(socket) {
+    socket.setTimeout(msecs);
+    socket.removeListener("timeout", socket.destroy);
+    socket.addListener("timeout", socket.destroy);
+  }
+
   // Sets up a timer to trigger a timeout event
-  function startTimer() {
+  function startTimer(socket) {
     if (self._timeout) {
       clearTimeout(self._timeout);
     }
@@ -3752,6 +3757,7 @@ RedirectableRequest.prototype.setTimeout = function (msecs, callback) {
       self.emit("timeout");
       clearTimer();
     }, msecs);
+    destroyOnTimeout(socket);
   }
 
   // Prevent a timeout from triggering
@@ -3767,12 +3773,13 @@ RedirectableRequest.prototype.setTimeout = function (msecs, callback) {
 
   // Start the timer when the socket is opened
   if (this.socket) {
-    startTimer();
+    startTimer(this.socket);
   }
   else {
     this._currentRequest.once("socket", startTimer);
   }
 
+  this.on("socket", destroyOnTimeout);
   this.once("response", clearTimer);
   this.once("error", clearTimer);
 
@@ -3851,11 +3858,8 @@ RedirectableRequest.prototype._performRequest = function () {
 
   // Set up event handlers
   request._redirectable = this;
-  for (var event in eventHandlers) {
-    /* istanbul ignore else */
-    if (event) {
-      request.on(event, eventHandlers[event]);
-    }
+  for (var e = 0; e < events.length; e++) {
+    request.on(events[e], eventHandlers[events[e]]);
   }
 
   // End a redirected request
@@ -3913,9 +3917,7 @@ RedirectableRequest.prototype._processResponse = function (response) {
   if (location && this._options.followRedirects !== false &&
       statusCode >= 300 && statusCode < 400) {
     // Abort the current request
-    this._currentRequest.removeAllListeners();
-    this._currentRequest.on("error", noop);
-    this._currentRequest.abort();
+    abortRequest(this._currentRequest);
     // Discard the remainder of the response to avoid waiting for data
     response.destroy();
 
@@ -4105,6 +4107,14 @@ function createErrorType(code, defaultMessage) {
   CustomError.prototype.name = "Error [" + code + "]";
   CustomError.prototype.code = code;
   return CustomError;
+}
+
+function abortRequest(request) {
+  for (var e = 0; e < events.length; e++) {
+    request.removeListener(events[e], eventHandlers[events[e]]);
+  }
+  request.on("error", noop);
+  request.abort();
 }
 
 // Exports
@@ -4446,7 +4456,7 @@ module.exports = {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse("{\"name\":\"blueprint-action-typescript\",\"version\":\"1.0.0\",\"description\":\"Template repository for TypeScript Github Actions\",\"main\":\"dist/main.js\",\"repository\":\"git@github.com:bluenovaio/blueprint-action-typescript.git\",\"author\":\"@bluenovaio\",\"license\":\"MIT\",\"private\":false,\"scripts\":{\"build\":\"tsc\",\"format\":\"prettier --write **/*.ts\",\"format-check\":\"prettier --check **/*.ts\",\"lint\":\"eslint src/**/*.ts\",\"package\":\"ncc build --source-map --license licenses.txt\",\"test\":\"jest --passWithNoTests\"},\"dependencies\":{\"@actions/core\":\"^1.2.6\",\"@slack/webhook\":\"^6.0.0\"},\"devDependencies\":{\"@jest/types\":\"^26.6.2\",\"@types/jest\":\"^26.0.20\",\"@types/node\":\"^14.14.32\",\"@typescript-eslint/eslint-plugin\":\"^4.16.1\",\"@typescript-eslint/parser\":\"^4.16.1\",\"@vercel/ncc\":\"^0.27.0\",\"eslint\":\"^7.21.0\",\"eslint-config-semistandard\":\"^15.0.1\",\"eslint-config-standard\":\"^16.0.2\",\"eslint-plugin-import\":\"^2.22.1\",\"eslint-plugin-node\":\"^11.1.0\",\"eslint-plugin-promise\":\"^4.3.1\",\"eslint-plugin-standard\":\"^5.0.0\",\"jest\":\"^26.6.3\",\"prettier\":\"^2.2.1\",\"ts-jest\":\"^26.5.3\",\"ts-node\":\"^9.1.1\",\"typescript\":\"^4.2.3\"}}");
+module.exports = JSON.parse('{"name":"blueprint-action-typescript","version":"1.0.0","description":"Template repository for TypeScript Github Actions","main":"dist/main.js","repository":"git@github.com:bluenovaio/blueprint-action-typescript.git","author":"@bluenovaio","license":"MIT","private":false,"scripts":{"build":"tsc","format":"prettier --write **/*.ts","format-check":"prettier --check **/*.ts","lint":"eslint src/**/*.ts","package":"ncc build --source-map --license licenses.txt","test":"jest --passWithNoTests"},"dependencies":{"@actions/core":"^1.2.6","@slack/webhook":"^6.0.0"},"devDependencies":{"@jest/types":"^26.6.2","@types/jest":"^26.0.22","@types/node":"^14.14.41","@typescript-eslint/eslint-plugin":"^4.21.0","@typescript-eslint/parser":"^4.21.0","@vercel/ncc":"^0.28.3","eslint":"^7.24.0","eslint-config-semistandard":"^15.0.1","eslint-config-standard":"^16.0.2","eslint-plugin-import":"^2.22.1","eslint-plugin-node":"^11.1.0","eslint-plugin-promise":"5.1.0","eslint-plugin-standard":"^5.0.0","jest":"^26.6.3","prettier":"^2.2.1","ts-jest":"^26.5.4","ts-node":"^9.1.1","typescript":"^4.2.4"}}');
 
 /***/ }),
 
@@ -4546,8 +4556,9 @@ module.exports = require("zlib");;
 /******/ 	// The require function
 /******/ 	function __nccwpck_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -4572,11 +4583,14 @@ module.exports = require("zlib");;
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
-/******/ 	__nccwpck_require__.ab = __dirname + "/";/************************************************************************/
-/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __nccwpck_require__(9496);
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(9496);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=index.js.map
