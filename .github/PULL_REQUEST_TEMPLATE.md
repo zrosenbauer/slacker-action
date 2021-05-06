@@ -14,7 +14,6 @@ By submitting a PR to this repository, you agree to the terms within the [Code o
 > Include any links supporting this change such as a:
 >
 > - GitHub Issue/PR number addressed or fixed
-> - Auth0 Community post
 > - StackOverflow post
 > - Support forum thread
 > - Related pull requests/issues from other repos
