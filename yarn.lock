@@ -509,6 +509,17 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@jest/types@^27.0.6":
+  version "27.0.6"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-27.0.6.tgz#9a992bc517e0c49f035938b8549719c2de40706b"
+  integrity sha512-aSquT1qa9Pik26JK5/3rvnYb4bGtm1VFNesHKmNTwmPIgOrixvhL2ghIvFRNEpzy3gU+rUgjIF/KodbkFAl++g==
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -672,6 +683,13 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@types/yargs@^16.0.0":
+  version "16.0.4"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-16.0.4.tgz#26aad98dd2c2a38e421086ea9ad42b9e51642977"
+  integrity sha512-T8Yc9wt/5LbJyCaLiHPReJa0kApcIgJ7Bn735GjItUfh08Z1pJvu8QZqb9s+mMvKV6WUQRV7K2R46YbjMXTTJw==
+  dependencies:
+    "@types/yargs-parser" "*"
+
 "@typescript-eslint/eslint-plugin@^4.21.0":
   version "4.22.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.22.0.tgz#3d5f29bb59e61a9dba1513d491b059e536e16dbc"
@@ -742,10 +760,10 @@
     "@typescript-eslint/types" "4.22.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vercel/ncc@^0.28.3":
-  version "0.28.4"
-  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.28.4.tgz#ca83bc00a994c48525d8b83abe32e6edf38551c6"
-  integrity sha512-vQe8WuBMiBgJbRM9TXMSb2zXmaoplH84K91nd2CmIlrXH0F3RjyiO9kdvaZbKbAQ66Mh/hMF2JPtDzbVvsx+Eg==
+"@vercel/ncc@^0.28.6":
+  version "0.28.6"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.28.6.tgz#073c0ce8e0269210c0a9f180fb0bf949eecc20e0"
+  integrity sha512-t4BoSSuyK8BZaUE0gV18V6bkFs4st7baumtFGa50dv1tMu2GDBEBF8sUZaKBdKiL6DzJ2D2+XVCwYWWDcQOYdQ==
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
