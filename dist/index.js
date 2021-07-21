@@ -4547,7 +4547,7 @@ module.exports = {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"blueprint-action-typescript","version":"1.0.0","description":"Template repository for TypeScript Github Actions","main":"dist/main.js","repository":"git@github.com:bluenovaio/blueprint-action-typescript.git","author":"@bluenovaio","license":"MIT","private":false,"scripts":{"build":"tsc","format":"prettier --write **/*.ts","format-check":"prettier --check **/*.ts","lint":"eslint src/**/*.ts","package":"ncc build --source-map --license licenses.txt","test":"jest --passWithNoTests"},"dependencies":{"@actions/core":"^1.2.6","@slack/webhook":"^6.0.0"},"devDependencies":{"@jest/types":"^27.0.6","@types/jest":"^26.0.22","@types/node":"^16.0.0","@typescript-eslint/eslint-plugin":"^4.21.0","@typescript-eslint/parser":"^4.21.0","@vercel/ncc":"^0.28.6","eslint":"^7.24.0","eslint-config-semistandard":"^16.0.0","eslint-config-standard":"^16.0.2","eslint-plugin-import":"^2.22.1","eslint-plugin-node":"^11.1.0","eslint-plugin-promise":"5.1.0","eslint-plugin-standard":"^5.0.0","jest":"^27.0.6","prettier":"^2.2.1","ts-jest":"^27.0.3","ts-node":"^10.0.0","typescript":"^4.2.4"}}');
+module.exports = JSON.parse('{"name":"blueprint-action-typescript","version":"1.0.0","description":"Template repository for TypeScript Github Actions","main":"dist/main.js","repository":"git@github.com:bluenovaio/blueprint-action-typescript.git","author":"@bluenovaio","license":"MIT","private":false,"scripts":{"build":"tsc","format":"prettier --write **/*.ts","format-check":"prettier --check **/*.ts","lint":"eslint src/**/*.ts","package":"ncc build --source-map --license licenses.txt","test":"jest --passWithNoTests"},"dependencies":{"@actions/core":"^1.2.6","@slack/webhook":"^6.0.0"},"devDependencies":{"@jest/types":"^27.0.6","@types/jest":"^26.0.24","@types/node":"^16.4.0","@typescript-eslint/eslint-plugin":"^4.28.4","@typescript-eslint/parser":"^4.28.4","@vercel/ncc":"^0.29.0","eslint":"^7.31.0","eslint-config-semistandard":"^16.0.0","eslint-config-standard":"^16.0.2","eslint-plugin-import":"^2.22.1","eslint-plugin-node":"^11.1.0","eslint-plugin-promise":"5.1.0","eslint-plugin-standard":"^5.0.0","jest":"^27.0.6","prettier":"^2.2.1","ts-jest":"^27.0.3","ts-node":"^10.1.0","typescript":"^4.2.4"}}');
 
 /***/ }),
 
@@ -4555,7 +4555,7 @@ module.exports = JSON.parse('{"name":"blueprint-action-typescript","version":"1.
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("assert");;
+module.exports = require("assert");
 
 /***/ }),
 
@@ -4563,7 +4563,7 @@ module.exports = require("assert");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("fs");;
+module.exports = require("fs");
 
 /***/ }),
 
@@ -4571,7 +4571,7 @@ module.exports = require("fs");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("http");;
+module.exports = require("http");
 
 /***/ }),
 
@@ -4579,7 +4579,7 @@ module.exports = require("http");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("https");;
+module.exports = require("https");
 
 /***/ }),
 
@@ -4587,7 +4587,7 @@ module.exports = require("https");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("os");;
+module.exports = require("os");
 
 /***/ }),
 
@@ -4595,7 +4595,7 @@ module.exports = require("os");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("path");;
+module.exports = require("path");
 
 /***/ }),
 
@@ -4603,7 +4603,7 @@ module.exports = require("path");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("stream");;
+module.exports = require("stream");
 
 /***/ }),
 
@@ -4611,7 +4611,7 @@ module.exports = require("stream");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("tty");;
+module.exports = require("tty");
 
 /***/ }),
 
@@ -4619,7 +4619,7 @@ module.exports = require("tty");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("url");;
+module.exports = require("url");
 
 /***/ }),
 
@@ -4627,7 +4627,7 @@ module.exports = require("url");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("util");;
+module.exports = require("util");
 
 /***/ }),
 
@@ -4635,7 +4635,7 @@ module.exports = require("util");;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("zlib");;
+module.exports = require("zlib");
 
 /***/ })
 
@@ -4674,7 +4674,9 @@ module.exports = require("zlib");;
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
