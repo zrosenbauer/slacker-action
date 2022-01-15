@@ -26,6 +26,8 @@ const availableInputs = ['username', 'text', 'icon_emoji', 'icon_url'];
 
     await slack.sendMessage(webhookUrl, config);
   } catch (err) {
-    core.setFailed(err.message);
+    if (err instanceof Error) {
+      core.setFailed(err.message);
+    }
   }
 })();
