@@ -8,7 +8,6 @@ By submitting a PR to this repository, you agree to the terms within the [Code o
 >
 > If the UI is being changed, please provide screenshots.
 
-
 ### References
 
 > Include any links supporting this change such as a:

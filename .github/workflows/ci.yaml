@@ -1,4 +1,4 @@
-name: "CI"
+name: 'CI'
 
 on:
   pull_request:
@@ -33,5 +33,5 @@ jobs:
         with:
           webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           text: This is a new commit - ${{ github.sha }}
-          username: "BlueNova Bot"
-          icon_url: "https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG"
+          username: 'BlueNova Bot'
+          icon_url: 'https://raw.githubusercontent.com/bluenovaio/action-slack/main/bluenova-icon.png?token=AA2TF7NCV2CT7AOSJ5IPDJTAIW4HG'

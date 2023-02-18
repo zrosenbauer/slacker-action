@@ -1,6 +1,6 @@
 name: Slack Webhook
 description: Action used to send messages to slack via a webhook.
-author: "@bluenovaio"
+author: '@bluenovaio'
 inputs:
   username:
     description: Use to specify the username for the published message.
