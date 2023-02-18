@@ -9,7 +9,10 @@ export interface Input {
   icon_url?: string;
 }
 
-export async function sendMessage (webhookUrl: string, input: Input): Promise<void> {
+export async function sendMessage (
+  webhookUrl: string,
+  input: Input
+): Promise<void> {
   const webhook = new IncomingWebhook(webhookUrl);
 
   await webhook.send(input);
