@@ -36,6 +36,7 @@ jobs:
           text: 'This is a sample message'
           webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
 ```
+
 <br>
 <br>
 <hr>

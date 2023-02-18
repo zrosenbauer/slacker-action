@@ -9,7 +9,7 @@ export interface Input {
   icon_url?: string;
 }
 
-export async function sendMessage(
+export async function sendMessage (
   webhookUrl: string,
   input: Input
 ): Promise<void> {
