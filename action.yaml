@@ -1,6 +1,6 @@
-name: Slack Webhook
+name: Slacktion
 description: Action used to send messages to slack via a webhook.
-author: '@bluenovaio'
+author: '@zrosenbauer'
 inputs:
   username:
     description: Use to specify the username for the published message.
@@ -10,7 +10,7 @@ inputs:
     required: true
   webhook_url:
     description: Use to define the webhook URL used to send a message.
-    required: false
+    required: true
   icon_emoji:
     description: Use to specify an emoji (using colon shortcodes, eg. :white_check_mark:) to use as the profile photo alongside the message.
     required: false
