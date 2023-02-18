@@ -1,9 +1,9 @@
 {
-  "name": "slack",
+  "name": "slacktion",
   "version": "1.0.0",
   "description": "Github Action that allows you to send messages to Slack via a webhook.",
   "main": "dist/main.js",
-  "repository": "git@github.com:zrosenbauer/slack.git",
+  "repository": "git@github.com:zrosenbauer/slacktion.git",
   "author": "@zrosenbauer",
   "license": "MIT",
   "private": false,
