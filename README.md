@@ -29,7 +29,7 @@ jobs:
     name: Send a Message
     runs-on: ubuntu-latest
     steps:
-      - uses: zrosenbauer/slacker-action@main
+      - uses: zrosenbauer/slacker@main
         with:
           username: 'ExampleBot'
           icon_emoji: ':robot_face:'
