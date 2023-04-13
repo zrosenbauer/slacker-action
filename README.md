@@ -5,12 +5,12 @@
     <hr>
 </div>
 
-> Get in on some Slacktion!
+> Work smarter not harder with Slacker!
 
 # Overview
 
-[![CI](https://github.com/zrosenbauer/action-slack/actions/workflows/ci.yaml/badge.svg)](https://github.com/zrosenbauer/action-slack/actions/workflows/ci.yaml)
-[![CodeQL](https://github.com/zrosenbauer/action-slack/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zrosenbauer/action-slack/actions/workflows/codeql-analysis.yml)
+[![CI](https://github.com/zrosenbauer/slacker/actions/workflows/ci.yaml/badge.svg)](https://github.com/zrosenbauer/slacker/actions/workflows/ci.yaml)
+[![CodeQL](https://github.com/zrosenbauer/slacker/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zrosenbauer/slacker/actions/workflows/codeql-analysis.yml)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
@@ -29,7 +29,7 @@ jobs:
     name: Send a Message
     runs-on: ubuntu-latest
     steps:
-      - uses: zrosenbauer/slacktion@v1.2.0
+      - uses: zrosenbauer/slacker@main
         with:
           username: 'ExampleBot'
           icon_emoji: ':robot_face:'
