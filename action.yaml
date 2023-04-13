@@ -1,4 +1,4 @@
-name: slacker
+name: slacker-action
 description: Action used to send messages to slack via a webhook.
 author: '@zrosenbauer'
 inputs:
