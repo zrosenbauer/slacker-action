@@ -1,0 +1,25 @@
+name: Manually Send a Message
+on:
+  workflow_dispatch:
+    inputs:
+      username: 
+        type: string
+        default: 'ExampleBot'
+      icon_emoji:
+        type: string
+        default: ':robot_face:'
+      text: 
+        type: string
+        default: 'This is a sample message!'
+
+jobs:
+  sendAMessage:
+    name: Send a Message
+    runs-on: ubuntu-latest
+    steps:
+      - uses: zrosenbauer/slacker-action@main
+        with:
+          username: ${{ inputs.username }}
+          icon_emoji: ${{ inputs.icon_emoji }}
+          text: ${{ inputs.text }}
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
