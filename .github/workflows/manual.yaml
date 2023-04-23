@@ -2,13 +2,13 @@ name: Manually Send a Message
 on:
   workflow_dispatch:
     inputs:
-      username: 
+      username:
         type: string
         default: 'ExampleBot'
       icon_emoji:
         type: string
         default: ':robot_face:'
-      text: 
+      text:
         type: string
         default: 'This is a sample message!'
 
