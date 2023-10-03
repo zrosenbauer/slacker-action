@@ -6,7 +6,6 @@
   "repository": "git@github.com:zrosenbauer/slacker.git",
   "author": "@zrosenbauer",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "build": "tsc",
     "type:check": "tsc --noEmit",
