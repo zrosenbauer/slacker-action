@@ -1,1 +1,0 @@
-{"version":3,"file":"slack.js","sourceRoot":"","sources":["../../src/lib/slack.ts"],"names":[],"mappings":";;;AAAA,4CAAiD;AAW1C,KAAK,UAAU,WAAW,CAC/B,UAAkB,EAClB,KAAY;IAEZ,MAAM,OAAO,GAAG,IAAI,yBAAe,CAAC,UAAU,CAAC,CAAC;IAEhD,MAAM,OAAO,CAAC,IAAI,CAAC,KAAK,CAAC,CAAC;AAC5B,CAAC;AAPD,kCAOC"}

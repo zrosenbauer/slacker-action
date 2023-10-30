@@ -2,7 +2,7 @@
   "name": "slacker",
   "version": "1.0.0",
   "description": "Github Action that allows you to send messages to Slack via a webhook.",
-  "main": "dist/main.js",
+  "main": "build/main.js",
   "repository": "git@github.com:zrosenbauer/slacker.git",
   "author": "@zrosenbauer",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "format:check": "prettier --check .",
     "lint:check": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "package": "ncc build --source-map --license licenses.txt",
+    "package": "ncc build dist/main.js --source-map --license licenses.txt --out build",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
