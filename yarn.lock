@@ -1000,14 +1000,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slack/webhook@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@slack/webhook@npm:7.0.0"
+"@slack/webhook@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@slack/webhook@npm:7.0.1"
   dependencies:
     "@slack/types": ^2.9.0
     "@types/node": ">=18.0.0"
-    axios: ^1.5.1
-  checksum: 549587d6a393ac8edc1a735d6abb184f238e2c9d4a8bd7f00da420c6201e0e28c2b98763c6814b28e53638f7e254d257771219d715cf7743944998aa67b0ca16
+    axios: ^1.6.0
+  checksum: 354dfe7d59e96584a08b20d36c28176210c1a9805f0716191978078bfc3c157cc37697d2904928751d7e10c0d2d82a8367b1c833d973a576da4b2294abd1cb71
   languageName: node
   linkType: hard
 
@@ -1613,7 +1613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.5.1":
+"axios@npm:^1.6.0":
   version: 1.6.0
   resolution: "axios@npm:1.6.0"
   dependencies:
@@ -5345,7 +5345,7 @@ __metadata:
   dependencies:
     "@actions/core": ^1.10.1
     "@jest/types": ^29.6.3
-    "@slack/webhook": ^7.0.0
+    "@slack/webhook": ^7.0.1
     "@types/jest": ^29.5.6
     "@types/node": ^20.8.9
     "@typescript-eslint/eslint-plugin": ^6.9.0
