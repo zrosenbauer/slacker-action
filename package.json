@@ -13,7 +13,7 @@
     "format:check": "prettier --check .",
     "lint:check": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "package": "ncc build dist/index.js --source-map --license licenses.txt --out build",
+    "package": "ncc build dist/main.js --source-map --license licenses.txt --out build",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
