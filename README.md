@@ -1,6 +1,4 @@
 <img src="https://github.com/zrosenbauer/art/blob/main/banners/banner_archived.png" />
-<br />
-
 <div align="center">
     <h1>
         Migrate to 
