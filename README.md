@@ -1,3 +1,15 @@
+<img src="https://github.com/zrosenbauer/art/blob/main/banners/banner_archived.png" />
+<br />
+
+<div align="center">
+    <h1>
+        Recommended replacement: [https://github.com/slackapi/slack-github-action](https://github.com/slackapi/slack-github-action)
+    </h1>
+</div>
+
+<br />
+<br />
+<br />
 <div>
     <p align="center">
         <img src="/logo.png" align="center" width="300" />
