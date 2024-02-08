@@ -3,7 +3,10 @@
 
 <div align="center">
     <h1>
-        Recommended replacement: [https://github.com/slackapi/slack-github-action](https://github.com/slackapi/slack-github-action)
+        Migrate to 
+        <a href="https://github.com/slackapi/slack-github-action">
+            Slack GitHub Action (from the Slack Team)
+        </a>
     </h1>
 </div>
 
