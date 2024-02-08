@@ -1,11 +1,11 @@
 <img src="https://github.com/zrosenbauer/art/blob/main/banners/banner_archived.png" />
 <div align="center">
-    <h1>
+    <p>
         Migrate to 
         <a href="https://github.com/slackapi/slack-github-action">
             Slack GitHub Action (from the Slack Team)
         </a>
-    </h1>
+    </p>
 </div>
 
 <br />
